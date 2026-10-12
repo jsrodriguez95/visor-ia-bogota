@@ -6,11 +6,11 @@
 <title>IA generativa, empleo y carreras en Bogotá</title>
 <meta name="description" content="Qué parte del empleo de Bogotá está expuesta a la IA generativa, en qué oficios la persona sigue siendo necesaria y qué hacer con cada carrera de pregrado.">
 <style>
-@font-face{font-family:'IBM Plex Sans';font-weight:400;font-display:swap;src:url(fuentes/ibm-plex-sans-latin-400-normal.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Sans';font-weight:500;font-display:swap;src:url(fuentes/ibm-plex-sans-latin-500-normal.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Sans';font-weight:600;font-display:swap;src:url(fuentes/ibm-plex-sans-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Source Serif 4';font-weight:500;font-display:swap;src:url(fuentes/source-serif-4-latin-500-normal.woff2) format('woff2')}
-@font-face{font-family:'Source Serif 4';font-weight:600;font-display:swap;src:url(fuentes/source-serif-4-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:400;font-display:swap;src:url(ibm-plex-sans-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-display:swap;src:url(ibm-plex-sans-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-display:swap;src:url(ibm-plex-sans-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Serif 4';font-weight:500;font-display:swap;src:url(source-serif-4-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Serif 4';font-weight:600;font-display:swap;src:url(source-serif-4-latin-600-normal.woff2) format('woff2')}
 /* Layout: encabezado con cifras, pestañas por pregunta, una visualización por pestaña con titular y nota. */
 :root{
 --bg:#F3F5F8;--surface:#FFFFFF;--fg:#16213A;--muted:#5A6577;--line:#D9DEE6;--grid:#E6E9EF;--accent:#B5481A;
@@ -129,7 +129,7 @@ function showTip(e,h){tip.innerHTML=h;tip.style.display='block';const w=tip.offs
 const hideTip=()=>tip.style.display='none';
 function hover(el,h){el.addEventListener('pointermove',e=>showTip(e,h));el.addEventListener('pointerleave',hideTip)}
 function legend(items){return `<div class="legend">${items.map(([n,c])=>`<span><i style="background:${col(c)}"></i>${n}</span>`).join('')}</div>`}
-const panel=(t,note,body,dl=[])=>`<section class="panel"><h2>${t}</h2>${body}<p class="note">${note}</p>${dl.length?`<div class="dl">${dl.map(([f,n])=>`<a href="datos/${f}" download>${n}</a>`).join('')}</div>`:''}</section>`;
+const panel=(t,note,body,dl=[])=>`<section class="panel"><h2>${t}</h2>${body}<p class="note">${note}</p>${dl.length?`<div class="dl">${dl.map(([f,n])=>`<a href="${f}" download>${n}</a>`).join('')}</div>`:''}</section>`;
 const CSV=(f,n='Descargar datos (CSV)')=>[f,n];
 const I=n=>D.info[n]||{e:n,c:'',p:[]};
 const lab=n=>{const i=I(n);return `${i.e}<small>CINE-F ${i.c} · ${n}</small>`};
